@@ -1,0 +1,22 @@
+:root{
+    --nav-col: #284b63;
+    --nav-font: #ffffff;
+}
+
+.navH{
+    width: 100%;
+    background-color: var(--nav-col);
+    padding: 0.5rem;
+}
+
+.titH{
+    font-size: 2.5rem;
+    margin: 0;
+    color: var(--nav-font);
+}
+
+@media screen and (max-width: 830px){
+    .titH{
+        font-size: 1.5rem;
+    }
+}

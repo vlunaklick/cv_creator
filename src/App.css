@@ -1,38 +1,83 @@
-.App {
-  text-align: center;
+:root{
+    --container-back: #d9d9d9;
+    --main-color: #e7ecef;
+    --content-color: #ffffff;
+    --sidebar-color: #9db4c0;
+    --sombra-conts: #8b8b8b6e;
+    --sizeConts: calc(( var(--heigthConts) * 595 ) / 842 );
+    --heigthConts: 97.32360097323601vh;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.App{
+    display: flex;
+    flex-direction: column;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+.main{
+    min-width: var(--sizeConts);
+    background-color: var(--main-color);
+    min-height: var(--heigthConts);
+    margin-right: 1rem;
+    margin-top: 1rem;
+    box-shadow: 0 0 10px var(--sombra-conts);
+    padding: 1rem;
+    border: 1px solid #000;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+.example{
+    display: flex;
+    min-width: var(--sizeConts);
+    height: var(--heigthConts);
+    margin-left: 1rem;
+    margin-top: 1rem;
+    box-shadow: 0 0 10px var(--sombra-conts);
+    border: 1px solid #000;
 }
 
-.App-link {
-  color: #61dafb;
+.sidebar{
+    width: 35%;
+    background-color: var(--sidebar-color);
+    height: 100%;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.content{
+    width: 100%;
+    background-color: var(--content-color);
+    height: 100%;
+}
+
+.containers{
+    display: flex;
+    flex-direction: row;
+    background-color: var(--container-back);
+    width: 100%;
+    min-height: calc(100vh - 62px);
+    justify-content: center;
+}
+.personalInfo{
+    margin: 0;
+    font-weight: 400;
+}
+
+#description{
+    box-sizing: border-box;
+    width: 100%;
+    max-width: 100%;
+    max-height: 6rem;
+    resize: none;
+    margin-top: 0.5rem;
+    border: none;
+    border: 1px solid #000;
+}
+
+
+
+@media screen and (max-width: 1250px) {
+    .containers{
+        flex-direction: column;
+    }
+    .main,
+    .example{
+        margin: 0;
+    }
 }
