@@ -101,7 +101,7 @@ class App extends React.Component {
         ...prevState.education,
         {
         id: uniqid(),
-        studied: "",
+        place: "",
         degree: "",
         start: "",
         end: ""
@@ -150,7 +150,7 @@ class App extends React.Component {
     });
 
     let educationalCv = this.state.education.map( item => {
-      return <Educational degree={item.degree} studied={item.place} yearss={item.start} toyearss={item.end} />
+      return <Educational degree={item.degree} place={item.place} yearss={item.start} toyearss={item.end} />
     });
     let educationalButton = this.state.education.map( item => {
       return <EducationalMain deleted={this.deleteEducation} id={item.id} opcion={this.changeEducation} />
