@@ -1,7 +1,7 @@
 import React from 'react'
-import './experience.css'
+import './educational.css'
 
-const Inxperience = (props) => {
+const Educational = (props) => {
 
     return (
         <div className="contInex">
@@ -16,5 +16,4 @@ const Inxperience = (props) => {
     )
 }
 
-export default Inxperience
-
+export default Educational

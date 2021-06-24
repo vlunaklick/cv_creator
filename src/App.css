@@ -6,7 +6,8 @@
     --sombra-conts: #8b8b8b6e;
     --sizeConts: calc(( var(--heigthConts) * 595 ) / 842 );
     --heigthConts: 1000px;
-    --colorFont: #5e5e5e; 
+    --colorFont: #313131; 
+    --colorBrackets: #c9c9c9;
 }
 
 .App{
@@ -53,6 +54,7 @@
     margin: 0;
     font-weight: 400;
     width: 100%;
+    margin-bottom: 0.5rem;
 }
 
 #description{
@@ -67,10 +69,20 @@
     padding: 0.25rem;
 }
 
+.educationalInfo{
+    margin: 0;
+    font-weight: 400;
+    width: 100%;
+    margin-top: 1.5rem;
+    padding-bottom: 0.5rem;
+    border-bottom: 1px solid #000;
+}
+
 .heading{
     display: flex;
     align-items: center;
     margin-bottom: .75rem;
+    border-bottom: 1px solid #000;
 }
 
 .boxP{

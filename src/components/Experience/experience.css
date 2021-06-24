@@ -1,0 +1,21 @@
+.contInex{
+    display: flex;
+    padding: 1rem;
+    padding-top: 0;
+    padding-bottom: 0;
+}
+
+.contder,
+.contizq{
+    width: 100%;
+    border-bottom: 1px solid var(--colorBrackets);
+}
+
+h4{
+    margin: 0;
+    margin-bottom: 0.3rem;
+    margin-top: 0.3rem;
+    font-weight: 400;
+    color: var(--colorFont);
+    font-size: .8rem;
+}

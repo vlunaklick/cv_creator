@@ -62,6 +62,11 @@ class App extends React.Component {
             <InputText opcion={this.changeName} format="number" placeholder="Location"/>
             <textarea  onChange={(e) => this.changeName(e)} id="description" placeholder="Description" rows="5"></textarea>
 
+            <h1 className="educationalInfo">Education</h1>
+
+
+            <h1 className="educationalInfo">Experience</h1>
+
 
           </div>
 
@@ -72,9 +77,13 @@ class App extends React.Component {
               <div className="content">
                   <Description desc={this.state.description} />
                   <Experience title="Education" />
-                  <Inxperience />
+                  
 
                   <Experience title="Experience" />
+                  <Inxperience company="Coca Cola" position="Programador" years="2001" toyears="Now" />
+                  <Inxperience company="Coca Cola" position="Programador" years="2001" toyears="Now" />
+                  <Inxperience company="Coca Cola" position="Programador" years="2001" toyears="Now" />
+
               </div>
 
               

@@ -3,7 +3,7 @@ import './sidebar.css'
 
 function Sidebar(props){
     let name = props.name.toUpperCase()
-    let location,email,phone;
+    let location,email,phone,nombre;
     if (props.location !== ""){
         location = (
             <div className="mailS">
@@ -53,19 +53,29 @@ function Sidebar(props){
             <div className="profilePic">
                 <img className="profilePicture" src="https://www.infoprision.com/sites/default/files/fg-avatar-anonymous-user-retina.png" alt="" />
             </div> 
-        )
+        );
+        nombre = (
+            <div className="basicStuff">
+                <h1 className="nameProf">{name}</h1>
+                <p className="titProf"> {props.title}</p>
+            </div>
+        );
     } else {
         foto = "";
+        nombre = (
+            <div className="basicStuff">
+                <h1 className="nameProfG">{name}</h1>
+                <p className="titGrande"> {props.title}</p>
+            </div>
+        );
     }
 
 
         return (
             <div className="sidebar">
                 {foto}
-                <div className="basicStuff">
-                    <h1 className="nameProf">{name}</h1>
-                    <p className="titProf"> {props.title}</p>
-                </div>
+                
+                {nombre}
 
                 {suma}
             </div>
