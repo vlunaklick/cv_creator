@@ -1,5 +1,4 @@
 import React from 'react'
-import './educational.css'
 
 const Educational = (props) => {
 

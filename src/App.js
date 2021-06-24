@@ -1,5 +1,6 @@
 import './App.css';
 import React from 'react'
+import uniqid from 'uniqid'
 import HeaderNav from './components/Header/Header.js'
 import InputText from './components/InputText/InputText.js'
 import Sidebar from './components/Sidebar/Sidebar.js'
@@ -7,6 +8,7 @@ import Description from './components/Description/Description.js'
 import Experience from './components/Experience/Experience.js'
 import Inxperience from './components/Experience/InExperience.js'
 import Educational from './components/Educational/Educational.js'
+import ExperienceMain from './components/Experience/ExperienceMain';
 
 class App extends React.Component {
   constructor(){
@@ -19,10 +21,14 @@ class App extends React.Component {
       location: "",
       description: "",
       showPro: false,
+      education: [],
       experience: [],
     }
     this.changeName = this.changeName.bind(this);
     this.changeProf = this.changeProf.bind(this);
+    this.addExperience = this.addExperience.bind(this);
+    this.changeExperience = this.changeExperience.bind(this);
+    this.deleteExperience = this.deleteExperience.bind(this);
   }
 
   changeName(event){
@@ -39,8 +45,55 @@ class App extends React.Component {
     })
   }
 
+  addExperience(){
+    this.setState(prevState =>{
+      return prevState.experience.push({
+        id: uniqid(),
+        company: "",
+        position: "",
+        start: "",
+        to: ""
+      })
+    })
+  }
+
+  changeExperience(id,e,value){
+    this.setState(prevState =>{
+      let cambioExp = e.toLowerCase();
+      let respuestaExp = prevState.experience.map(item => {
+            if (item.id === id){
+                return item[`${cambioExp}`] = `${value}`;
+            } else {
+                return item
+            }
+      })
+    return respuestaExp
+    })
+  }
+
+  deleteExperience(id){
+    this.setState( prevState =>{
+      // eslint-disable-next-line array-callback-return
+      let dele = prevState.experience.filter(item => {
+        if (item.id !== id){
+          return item
+        }
+      })
+      return prevState.experience = dele
+    })
+  }
+
 
   render(){
+
+    let experienceCv = this.state.experience.map(item =>{
+      return <Inxperience  company={item.company} position={item.position} years={item.start} toyears={item.to} />
+    });
+
+    let experienceButton = this.state.experience.map( item =>{
+      return <ExperienceMain deleted={this.deleteExperience} opcion={this.changeExperience} id={item.id} />
+    });
+
     return (
       <div className="App">
         <HeaderNav />
@@ -65,8 +118,12 @@ class App extends React.Component {
 
             <h1 className="educationalInfo">Education</h1>
 
+            <button className="buttonAdd">Add</button>
+
 
             <h1 className="educationalInfo">Experience</h1>
+            {experienceButton}
+            <button onClick={() => this.addExperience()} className="buttonAdd">Add</button>
 
 
           </div>
@@ -79,11 +136,12 @@ class App extends React.Component {
                   <Description desc={this.state.description} />
                   <Experience title="Education" />
                   <Educational company="Coca Cola" position="Programador" years="2001" toyears="Present" />
+                  <Educational company="Coca Cola" position="Programador" years="2001" toyears="Present" />
+
 
                   <Experience title="Experience" />
-                  <Inxperience company="Coca Cola" position="Programador" years="2001" toyears="Present" />
-                  <Inxperience company="Coca Cola" position="Programador" years="2001" toyears="Present" />
-                  <Inxperience company="Coca Cola" position="Programador" years="2001" toyears="Present" />
+
+                  {experienceCv}
 
               </div>
 

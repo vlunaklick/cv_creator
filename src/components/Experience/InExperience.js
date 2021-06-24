@@ -10,7 +10,7 @@ const Inxperience = (props) => {
                 <h4 className="position"><strong>As:</strong> {props.position}</h4>
             </div>
             <div className="contder">
-                <h4 className="years"><strong>Time: </strong>{props.years} - {props.toyears}</h4> 
+                <h4 className="years"><strong>{props.years} - {props.toyears}</strong></h4> 
             </div>
         </div>
     )
