@@ -5,7 +5,8 @@ import InputText from './components/InputText/InputText.js'
 import Sidebar from './components/Sidebar/Sidebar.js'
 import Description from './components/Description/Description.js'
 import Experience from './components/Experience/Experience.js'
-import Inxperience from './components/Experience/InExperience'
+import Inxperience from './components/Experience/InExperience.js'
+import Educational from './components/Educational/Educational.js'
 
 class App extends React.Component {
   constructor(){
@@ -77,12 +78,12 @@ class App extends React.Component {
               <div className="content">
                   <Description desc={this.state.description} />
                   <Experience title="Education" />
-                  
+                  <Educational company="Coca Cola" position="Programador" years="2001" toyears="Present" />
 
                   <Experience title="Experience" />
-                  <Inxperience company="Coca Cola" position="Programador" years="2001" toyears="Now" />
-                  <Inxperience company="Coca Cola" position="Programador" years="2001" toyears="Now" />
-                  <Inxperience company="Coca Cola" position="Programador" years="2001" toyears="Now" />
+                  <Inxperience company="Coca Cola" position="Programador" years="2001" toyears="Present" />
+                  <Inxperience company="Coca Cola" position="Programador" years="2001" toyears="Present" />
+                  <Inxperience company="Coca Cola" position="Programador" years="2001" toyears="Present" />
 
               </div>
 
