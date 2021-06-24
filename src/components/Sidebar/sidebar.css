@@ -1,3 +1,7 @@
+:root{
+    --imgSize: calc((var(--heigthConts) * 17 * 100) - 28  )
+}
+
 .sidebar{
     height: 17%;
     background-color: var(--sidebar-color);
@@ -11,10 +15,16 @@
 .profilePic{
     height: 80%;
     border: 1px solid #000;
+    margin-left: 0.5rem;
+    width: var(--imgSize);
 }
 
 .profilePicture{
+    border-radius: inherit;
+    object-fit: cover;
     height: 100%;
+    width: 100%;
+    width: var(--imgSize);
 }
 
 .basicStuff{
@@ -23,7 +33,7 @@
     display: flex;
     flex-direction: column;
     width: 100%;
-    justify-content: center;
+    
 }
 
 .nameProf{
@@ -33,6 +43,7 @@
 .titProf{
     margin: 0;
     font-size: 0.9rem;
+    margin-top: 0.3rem;
 }
 
 .descProf{
@@ -47,6 +58,10 @@
     display: flex;
     justify-content: center;
     flex-direction: column;
+    padding-left: 0.5rem;
+    border-left: 1px solid #ffffff;
+    width: 40%;
+    
 }
 
 .mailS{
@@ -61,5 +76,6 @@
 }
 
 .textSS{
-    margin-left: 0.3rem;
+    margin-left: 0.5rem;
+    line-height: 1.1rem;
 }

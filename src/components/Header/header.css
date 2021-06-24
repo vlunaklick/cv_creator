@@ -1,5 +1,5 @@
 :root{
-    --nav-col: #284b63;
+    --nav-col: #354c7a;
     --nav-font: #ffffff;
 }
 
@@ -7,6 +7,7 @@
     width: 100%;
     background-color: var(--nav-col);
     padding: 0.5rem;
+    border-bottom: 1px solid #000;
 }
 
 .titH{

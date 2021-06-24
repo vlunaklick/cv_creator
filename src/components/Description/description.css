@@ -1,0 +1,21 @@
+.contM{
+    display: flex;
+    flex-direction: column;
+    padding: 1rem
+}
+
+.upperTitle{
+    color: var(--sidebar-color);
+    margin: 0;
+    padding-bottom: 0.27rem;
+    border-bottom: 1px solid var(--sidebar-color);
+}
+
+.pE{
+    margin: 0;
+    margin-top: 0.27rem;
+    font-size: .65rem;
+    text-align: justify;
+    text-justify: inter-word;
+    color: var(--colorFont);
+}

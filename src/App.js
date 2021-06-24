@@ -3,6 +3,9 @@ import React from 'react'
 import HeaderNav from './components/Header/Header.js'
 import InputText from './components/InputText/InputText.js'
 import Sidebar from './components/Sidebar/Sidebar.js'
+import Description from './components/Description/Description.js'
+import Experience from './components/Experience/Experience.js'
+import Inxperience from './components/Experience/InExperience'
 
 class App extends React.Component {
   constructor(){
@@ -13,17 +16,25 @@ class App extends React.Component {
       email: "",
       phone: "",
       location: "",
-      description: ""
+      description: "",
+      showPro: false,
+      experience: [],
     }
     this.changeName = this.changeName.bind(this);
+    this.changeProf = this.changeProf.bind(this);
   }
 
   changeName(event){
-    console.log(event)
     let cambio = (event.target.placeholder).toLowerCase()
     this.setState(prevState =>{
-      let res = prevState[`${cambio}`] = `${event.target.value}`;
-      return res
+      return prevState[`${cambio}`] = `${event.target.value}`;
+    })
+  }
+
+  changeProf(){
+    let valor = !(this.state.showPro)
+    this.setState(prevState =>{
+      return prevState.showPro = valor;
     })
   }
 
@@ -36,21 +47,34 @@ class App extends React.Component {
         <div className="containers">
 
           <div className="main">
-            <h1 className="personalInfo">Personal Info</h1>
+            <div className="heading">
+              <h1 className="personalInfo">Personal Info</h1>
+              <div className="boxP">
+                <input onClick={(e) => this.changeProf(e)} id="probox" type="checkbox"/><label htmlFor="probox">Show profile picture</label>
+              </div>
+              
+            </div>
+    
             <InputText opcion={this.changeName} format="text" placeholder="Name"/>
             <InputText opcion={this.changeName} format="text" placeholder="Title"/>
             <InputText opcion={this.changeName} format="text" placeholder="Email"/>
             <InputText opcion={this.changeName} format="number" placeholder="Phone"/>
             <InputText opcion={this.changeName} format="number" placeholder="Location"/>
             <textarea  onChange={(e) => this.changeName(e)} id="description" placeholder="Description" rows="5"></textarea>
+
+
           </div>
 
           <div className="example">
 
-              <Sidebar name={this.state.name} title={this.state.title} desc={this.state.description} email={this.state.email} location={this.state.location} phone={this.state.phone} />
+              <Sidebar showPro={this.state.showPro} name={this.state.name} title={this.state.title} desc={this.state.description} email={this.state.email} location={this.state.location} phone={this.state.phone} />
 
               <div className="content">
-                
+                  <Description desc={this.state.description} />
+                  <Experience title="Education" />
+                  <Inxperience />
+
+                  <Experience title="Experience" />
               </div>
 
               
