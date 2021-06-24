@@ -1,12 +1,21 @@
-# CV Creator
-[Live view](https://vlunaklick.github.io/cv_creator/)
+<h1 align="center">Welcome to CV Creator 👋</h1>
+<p>
+  <img alt="Version" src="https://img.shields.io/badge/version-1.0.0-blue.svg?cacheSeconds=2592000" />
+</p>
 
-In this project i recreated a: "**CV Creator**".
+> With this website you can create your own curriculum without taking too much time.
 
-Future addons: 
+### ✨ [Live View](https://vlunaklick.github.io/cv_creator/)
 
-   * Nocturne mode.
+## Author
 
-   * Better responsive.
+👤 **vlunaklick**
 
-   * Better design.
+* Website: www.linkedin.com/in/valentín-lunaklick-548360212
+* Github: [@vlunaklick](https://github.com/vlunaklick)
+* LinkedIn: [@valentín-lunaklick](https://linkedin.com/in/valentín-lunaklick)
+
+## Show your support
+
+Give a ⭐️ if this project helped you!
+
