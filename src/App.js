@@ -8,7 +8,8 @@ import Description from './components/Description/Description.js'
 import Experience from './components/Experience/Experience.js'
 import Inxperience from './components/Experience/InExperience.js'
 import Educational from './components/Educational/Educational.js'
-import ExperienceMain from './components/Experience/ExperienceMain';
+import ExperienceMain from './components/Experience/ExperienceMain'
+import EducationalMain from './components/Educational/EducationalMain';
 
 class App extends React.Component {
   constructor(){
@@ -29,6 +30,10 @@ class App extends React.Component {
     this.addExperience = this.addExperience.bind(this);
     this.changeExperience = this.changeExperience.bind(this);
     this.deleteExperience = this.deleteExperience.bind(this);
+
+    this.addEducation = this.addEducation.bind(this);
+    this.changeEducation = this.changeEducation.bind(this);
+    this.deleteEducation = this.deleteEducation.bind(this);
   }
 
   changeName(event){
@@ -46,14 +51,20 @@ class App extends React.Component {
   }
 
   addExperience(){
-    this.setState(prevState =>{
-      return prevState.experience.push({
+    this.setState(prevState =>{ 
+      let valor = {...prevState,
+      experience: [
+        ...prevState.experience,
+        {
         id: uniqid(),
         company: "",
         position: "",
         start: "",
         to: ""
-      })
+        }
+        ]
+    }
+    return valor
     })
   }
 
@@ -83,6 +94,50 @@ class App extends React.Component {
     })
   }
 
+  addEducation(){
+    this.setState(prevState =>{ 
+      let valor = {...prevState,
+      education: [
+        ...prevState.education,
+        {
+        id: uniqid(),
+        studied: "",
+        degree: "",
+        start: "",
+        end: ""
+        }
+        ]
+    }
+    return valor
+    })
+  }
+
+  changeEducation(id,e,value){
+    this.setState(prevState =>{
+      let cambioExp = e.toLowerCase();
+      let respuestaExp = prevState.education.map(item => {
+            if (item.id === id){
+                return item[`${cambioExp}`] = `${value}`;
+            } else {
+                return item
+            }
+      })
+    return respuestaExp
+    })
+  }
+
+  deleteEducation(id){
+    this.setState( prevState =>{
+      // eslint-disable-next-line array-callback-return
+      let dele = prevState.education.filter(item => {
+        if (item.id !== id){
+          return item
+        }
+      })
+      return prevState.education = dele
+    })
+  }
+  
 
   render(){
 
@@ -90,9 +145,16 @@ class App extends React.Component {
       return <Inxperience  company={item.company} position={item.position} years={item.start} toyears={item.to} />
     });
 
-    let experienceButton = this.state.experience.map( item =>{
+    let experienceButton = this.state.experience.map( item => {
       return <ExperienceMain deleted={this.deleteExperience} opcion={this.changeExperience} id={item.id} />
     });
+
+    let educationalCv = this.state.education.map( item => {
+      return <Educational degree={item.degree} studied={item.place} yearss={item.start} toyearss={item.end} />
+    });
+    let educationalButton = this.state.education.map( item => {
+      return <EducationalMain deleted={this.deleteEducation} id={item.id} opcion={this.changeEducation} />
+    })
 
     return (
       <div className="App">
@@ -117,8 +179,8 @@ class App extends React.Component {
             <textarea  onChange={(e) => this.changeName(e)} id="description" placeholder="Description" rows="5"></textarea>
 
             <h1 className="educationalInfo">Education</h1>
-
-            <button className="buttonAdd">Add</button>
+            {educationalButton}
+            <button onClick={() => this.addEducation()} className="buttonAdd">Add</button>
 
 
             <h1 className="educationalInfo">Experience</h1>
@@ -135,9 +197,7 @@ class App extends React.Component {
               <div className="content">
                   <Description desc={this.state.description} />
                   <Experience title="Education" />
-                  <Educational company="Coca Cola" position="Programador" years="2001" toyears="Present" />
-                  <Educational company="Coca Cola" position="Programador" years="2001" toyears="Present" />
-
+                  {educationalCv}
 
                   <Experience title="Experience" />
 
