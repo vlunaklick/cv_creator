@@ -142,18 +142,18 @@ class App extends React.Component {
   render(){
 
     let experienceCv = this.state.experience.map(item =>{
-      return <Inxperience  company={item.company} position={item.position} years={item.start} toyears={item.to} />
+      return <Inxperience  key={item.id} company={item.company} position={item.position} years={item.start} toyears={item.to} />
     });
 
     let experienceButton = this.state.experience.map( item => {
-      return <ExperienceMain deleted={this.deleteExperience} opcion={this.changeExperience} id={item.id} />
+      return <ExperienceMain key={item.id} deleted={this.deleteExperience} opcion={this.changeExperience} id={item.id} />
     });
 
     let educationalCv = this.state.education.map( item => {
-      return <Educational degree={item.degree} place={item.place} yearss={item.start} toyearss={item.end} />
+      return <Educational key={item.id} degree={item.degree} place={item.place} yearss={item.start} toyearss={item.end} />
     });
     let educationalButton = this.state.education.map( item => {
-      return <EducationalMain deleted={this.deleteEducation} id={item.id} opcion={this.changeEducation} />
+      return <EducationalMain key={item.id} deleted={this.deleteEducation} id={item.id} opcion={this.changeEducation} />
     })
 
     return (
