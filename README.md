@@ -12,11 +12,11 @@
 👤 **vlunaklick**
 
 * Github: [@vlunaklick](https://github.com/vlunaklick)
-* LinkedIn: [@valentín-lunaklick](https://linkedin.com/in/valentín-lunaklick)
+* LinkedIn: [@vlunaklick](https://linkedin.com/in/vlunaklick)
 
 ## My Profile
 
-> In my profile you can see route to convert into a fullstack web developer.
+> In my profile you can see my route to convert into a fullstack web developer.
 
 ## Show your support
 
