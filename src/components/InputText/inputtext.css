@@ -1,9 +1,12 @@
+#description,
 .inputL{
     box-sizing: border-box;
     width: 100%;
-    margin-top: 0.5rem;
-    border-radius: 3px;
-    border: none;
-    border: 1px solid #000;
     padding: 0.5rem;
+    outline: none;
+    background-color: #627D98;
+    border: none;
+    border-bottom: 2px solid #102A43;
+    color: #F0F4F8;
+    cursor: text;
 }
