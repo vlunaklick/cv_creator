@@ -1,19 +1,20 @@
 .contInex{
     display: flex;
-    padding: 1rem;
-    padding-top: 0;
-    padding-bottom: 0;
+    padding: 0 1rem;
+    margin-top: 0.2rem;
 }
 
 .contder,
 .contizq{
+    padding-bottom: 0.2rem;
     width: 100%;
     border-bottom: 1px solid var(--colorBrackets);
+    display: flex;
+    flex-direction: column;
+    gap: 0.2rem;
 }
 
 h4{
-    margin-bottom: 0.3rem;
-    margin-top: 0.3rem;
     font-weight: 400;
     color: var(--colorFont);
     font-size: 1rem;

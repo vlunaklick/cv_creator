@@ -3,6 +3,7 @@
     flex-direction: column;
     padding: 1rem;
     padding-bottom: 0;
+    gap: 0.2rem;
 }
 
 .upperTitle{
@@ -13,7 +14,6 @@
 }
 
 .pE{
-    margin-top: 0.27rem;
     font-size: 1rem;
     text-align: justify;
     text-justify: inter-word;

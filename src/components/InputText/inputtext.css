@@ -10,3 +10,8 @@
     color: #F0F4F8;
     cursor: text;
 }
+
+
+::placeholder{
+    color: #F0F4F8;
+}

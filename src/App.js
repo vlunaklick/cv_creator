@@ -226,7 +226,7 @@ class App extends React.Component {
 						<div className='heading'>
 							<h1 className='personalInfo'>Personal Info</h1>
 							<div className='boxP'>
-								<div>
+								<div class="allowPro">
 									<input
 										onClick={e => this.changeProf(e)}
 										id='probox'

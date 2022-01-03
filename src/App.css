@@ -73,10 +73,8 @@
     padding: 1rem;
 }
 .personalInfo{
-    margin: 0;
     font-weight: 600;
     width: 100%;
-    margin-bottom: 0.5rem;
 }
 
 #description{
@@ -91,10 +89,9 @@
 }
 
 .educationalInfo{
-    margin: 0;
-    font-weight: 400;
+    font-weight: 600;
     width: 100%;
-    padding-bottom: 0.5rem;
+    padding-bottom: 0.2rem;
     border-bottom: 1px solid #000;
 }
 
@@ -103,6 +100,7 @@
     align-items: center;
     border-bottom: 1px solid #000;
     width: 100%;
+    padding-bottom: 0.2rem;
 }
 
 .boxP{
@@ -111,10 +109,6 @@
     display: flex;
     align-items: flex-end;
     flex-direction: column;
-}
-
-#probox{
-    margin-right: 0.5rem;
 }
 
 .buttonAdd{
@@ -147,6 +141,13 @@ label{
     font-size: .7rem;
 }
 
+.allowPro{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 0.5rem;
+}
+
 @media screen and (max-width: 820px) {
     .example{
         width: 20rem;
@@ -173,6 +174,9 @@ label{
     .nameProfG{
         font-size: 1rem;
     }
+    #probox{
+        width: .6rem;
+    }
 }
 
 .inputfile{
@@ -185,4 +189,11 @@ label{
     background-color: #334E68;
     border-radius: 5px;
     font-size: 0.7rem;
+}
+
+@media screen and (max-width: 830px){
+    .labelFile{
+        padding: 0.2rem;
+        font-size: 0.6rem;
+    }
 }
