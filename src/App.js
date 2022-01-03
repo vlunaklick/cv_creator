@@ -24,6 +24,8 @@ class App extends React.Component {
 			showPro: false,
 			education: [],
 			experience: [],
+			profile:
+				'https://www.infoprision.com/sites/default/files/fg-avatar-anonymous-user-retina.png',
 		}
 		this.changeName = this.changeName.bind(this)
 		this.changeProf = this.changeProf.bind(this)
@@ -34,6 +36,7 @@ class App extends React.Component {
 		this.addEducation = this.addEducation.bind(this)
 		this.changeEducation = this.changeEducation.bind(this)
 		this.deleteEducation = this.deleteEducation.bind(this)
+		this.changeProfile = this.imageHandler.bind(this)
 	}
 
 	changeName(event) {
@@ -140,6 +143,11 @@ class App extends React.Component {
 		})
 	}
 
+	imageHandler = e => {
+		let src = URL.createObjectURL(e.target.files[0])
+		this.setState({ profile: src })
+	}
+
 	render() {
 		let experienceCv = this.state.experience.map(item => {
 			return (
@@ -193,6 +201,7 @@ class App extends React.Component {
 				<div className='containers'>
 					<div className='example'>
 						<Sidebar
+							profile={this.state.profile}
 							showPro={this.state.showPro}
 							name={this.state.name}
 							title={this.state.title}
@@ -217,12 +226,25 @@ class App extends React.Component {
 						<div className='heading'>
 							<h1 className='personalInfo'>Personal Info</h1>
 							<div className='boxP'>
-								<input
-									onClick={e => this.changeProf(e)}
-									id='probox'
-									type='checkbox'
-								/>
-								<label htmlFor='probox'>Show profile picture</label>
+								<div>
+									<input
+										onClick={e => this.changeProf(e)}
+										id='probox'
+										type='checkbox'
+									/>
+									<label htmlFor='probox'>Show profile picture</label>
+								</div>
+								<div>
+									<input
+										id='inputfile'
+										className='inputfile'
+										type='file'
+										onChange={this.changeProfile}
+									/>
+									<label htmlFor='inputfile' className='labelFile'>
+										Upload
+									</label>
+								</div>
 							</div>
 						</div>
 

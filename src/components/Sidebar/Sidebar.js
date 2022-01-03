@@ -50,11 +50,7 @@ function Sidebar(props) {
 	if (props.showPro === true) {
 		foto = (
 			<div className='profilePic'>
-				<img
-					className='profilePicture'
-					src='https://www.infoprision.com/sites/default/files/fg-avatar-anonymous-user-retina.png'
-					alt=''
-				/>
+				<img className='profilePicture' src={props.profile} alt='' />
 			</div>
 		)
 		nombre = (
