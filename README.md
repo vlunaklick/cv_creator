@@ -3,7 +3,7 @@
   <img alt="Version" src="https://img.shields.io/badge/version-1.0.0-blue.svg?cacheSeconds=2592000" />
 </p>
 
-> With this website you can create your own curriculum without taking too much time.
+> With this website you can create your own curriculum without taking too much time. You can upload your own picture, add your experience and education and some relevant data.
 
 ### ✨ [Live View](https://vlunaklick.github.io/cv_creator/)
 
